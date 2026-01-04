@@ -16,7 +16,15 @@ export default function Transition() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
 
-            <div className="relative flex items-center justify-start h-screen overflow-hidden">
+
+            <m.div
+                className="relative flex items-center justify-start h-screen overflow-hidden"
+                initial={{ opacity: 100 }}
+                animate={{ opacity: 0 }}
+                transition={{
+                    delay: 6.5
+                }}
+            >
                 {/* Rocket */}
                 <m.div
                     className="absolute left-0 z-10"
@@ -51,7 +59,7 @@ export default function Transition() {
                         }}
                     />
                 ))}
-            </div>
+            </m.div>
         </>
     );
 }
