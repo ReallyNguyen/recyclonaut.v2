@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Intro from "@/components/intro";
 import Transition from "@/components/transition";
+import Test from "@/components/test";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <link rel="icon" href="/logo.svg" /> logo soon */}
       </Head>
-      <Intro />
+      <Test />
     </>
   );
 }
