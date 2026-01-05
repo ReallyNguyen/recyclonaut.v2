@@ -26,9 +26,9 @@ export default function Test() {
                     initial={{ y: 0 }}
                     animate={{ y: "-100vh" }}
                     transition={{
-                        duration: rocketDuration,
-                        delay: rocketDelay,
-                        ease: "easeInOut",
+                        duration: 1.8,
+                        delay: 3.5,
+                        ease: "easeInOut"
                     }}
                 >
                     <Image
@@ -49,13 +49,14 @@ export default function Test() {
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{
-                            duration: 0.4,
-                            delay: rocketDelay + trailDelay + t * rocketDuration,
-                            ease: "easeOut",
+                            duration: 1,
+                            delay: rocketDelay + t + 2,
+                            ease: "easeInOut"
                         }}
                     />
                 ))}
             </div>
+
         </>
     );
 }
