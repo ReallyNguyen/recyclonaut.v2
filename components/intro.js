@@ -1,10 +1,14 @@
 import { motion as m } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
+
 
 const bars = Array.from({ length: 20 }, (_, i) => i / 19);
 
-export default function Intro() {
+export default function Intro({ children }) {
+    const [done, setDone] = useState(false);
+
     return (
         <>
             <Head>
@@ -13,41 +17,60 @@ export default function Intro() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
 
-            <div className="relative flex justify-center h-screen overflow-hidden">
-                <m.div
-                    className="absolute bottom-0 z-10"
-                    initial={{ y: 0 }}
-                    animate={{ y: "-100vh" }}
+            <m.div className="relative z-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                    delay: 6.5
+                }}
+            >
+                {children}
+            </m.div>
+            {!done && (
+                <m.div className="fixed inset-0 z-50 flex justify-center h-screen overflow-hidden"
+                    initial={{ opacity: 1 }}
+                    animate={{ opacity: 0 }}
                     transition={{
-                        duration: 1.8,
-                        delay: 3.5,
-                        ease: "easeInOut"
+                        delay: 6.5
                     }}
+                    onAnimationComplete={() => setDone(true)}
                 >
-                    <Image
-                        src="/rocket.svg"
-                        width={100}
-                        height={100}
-                        alt="Rocket"
-
-                    />
-                </m.div>
-
-                {bars.map((t, i) => (
                     <m.div
-                        key={i}
-                        className="absolute left-0 w-full bg-amber-50 h-16"
-                        style={{ bottom: `${i * 5}%` }}
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
+                        className="absolute bottom-0 z-10"
+                        initial={{ y: 0 }}
+                        animate={{ y: "-100vh" }}
                         transition={{
-                            duration: 1,
-                            delay: 4 + t,
+                            duration: 1.8,
+                            delay: 3.5,
                             ease: "easeInOut"
                         }}
-                    />
-                ))}
-            </div>
+                    >
+                        <Image
+                            src="/rocket.svg"
+                            width={100}
+                            height={100}
+                            alt="Rocket"
+
+                        />
+                    </m.div>
+
+                    {bars.map((t, i) => (
+                        <m.div
+                            key={i}
+                            className="absolute left-0 w-full bg-amber-50 h-16"
+                            style={{ bottom: `${i * 5}%` }}
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{
+                                duration: 1,
+                                delay: 4 + t,
+                                ease: "easeInOut"
+                            }}
+                        />
+                    ))}
+                </m.div>
+            )}
+
 
         </>
     );
