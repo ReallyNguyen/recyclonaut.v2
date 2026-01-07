@@ -72,7 +72,9 @@ export default function Intro({ children }) {
                                 }}
                             />
                         ))}
+                        {/* which sun */}
                         <div className="absolute top-8 right-8 w-48 h-48 rounded-full bg-yellow-300 blur-sm animate-pulse shadow-[0_0_60px_rgba(253,224,71,0.8)] z-10" />
+                        <div className="absolute top-32 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-yellow-300/30 rounded-full blur-3xl" />
                     </m.div>
                 </div>
 
