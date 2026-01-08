@@ -1,8 +1,22 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --headings: "Orbitron";
+  --buttons: "Silkscreen";
+  --body-text: "Montserrat";
+  --pure-white: #FFFFFF;
+  --russian-violet: #462255;
+  --syracuse-orange: #C84C09;
+  --golden-yellow: #FFD400;
+  --dogwood-rose: #D90368;
+  --hunter-green: #436436;
+  --dark-mode: #000000;
 }
 
 @theme inline {
