@@ -13,7 +13,7 @@ export default function Home() {
         {/* <link rel="icon" href="/logo.svg" /> logo soon */}
       </Head>
       <Intro>
-        asd
+        <h1 className="text-2xl">Front End Developer</h1>
         <Button
           name={"STORY"}
           page={"/intro"}
