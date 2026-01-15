@@ -13,11 +13,27 @@ export default function Home() {
         {/* <link rel="icon" href="/logo.svg" /> logo soon */}
       </Head>
       <Intro>
-        asd
-        <Button
-          name={"STORY"}
-          page={"/intro"}
-        />
+        <div className="flex h-screen items-center justify-center">
+          <div>
+            <h1 className="text-6xl font-[Orbitron] font-bold">
+              RECYCLONAUT
+            </h1>
+          </div>
+          <div>
+            <Button
+              name={"STORY"}
+              page={"/intro"}
+            />
+            <Button
+              name={"ASSESSMENT"}
+              page={"/intro"}
+            />
+            <Button
+              name={"ABOUT"}
+              page={"/intro"}
+            />
+          </div>
+        </div>
       </Intro>
     </>
   );
